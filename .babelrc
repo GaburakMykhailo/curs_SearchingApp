@@ -1,0 +1,21 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        ["env", {"targets": {"browsers": ["last 1 versions"]}, "debug" : true, "modules": false, }],
+        "stage-2",
+        "react"
+      ],
+      "plugins": [
+        ["source-wrapper", {"basePath": "./", "runtime": true}]
+      ]
+    },
+    "production": {
+      "presets": [
+        ["env", {"targets": {"browsers": ["> 1%", "last 2 versions"]}, "debug" : true, "modules": false}],
+        "stage-2",
+        "react"
+      ]
+    }
+  }
+}

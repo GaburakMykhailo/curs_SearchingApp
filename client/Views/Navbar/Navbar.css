@@ -1,0 +1,17 @@
+.social__item {
+    filter: grayscale(100%);
+}
+
+.social__item--current {
+    background: #81d2ff;
+}
+
+.social__item--active {
+    transition: all .5s ease-out;
+    filter: grayscale(0);
+}
+
+.social__item:hover {
+    filter: grayscale(50%);
+    background: #a8ebff;
+}
