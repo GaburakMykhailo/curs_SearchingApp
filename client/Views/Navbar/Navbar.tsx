@@ -24,22 +24,20 @@ export class NavbarComponent extends React.Component<NavbarComponentProps, null>
             <Navbar fluid>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a>Searching users</a>
+                        <a>Searching</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Navbar.Form pullLeft>
                     <FormGroup >
-                        <Route path="/:social/:type">
-                            {({match}: any) => (
-                                <FormControl
-                                    type="text"
-                                    placeholder="Search"
-                                    onChange={(event: any) => socialStores.getSocial(match.params.social).search(match.params.type, event.target.value)}
-                                />)}
-                        </Route>
-
+                        <FormControl
+                            width="auto"
+                            type="text"
+                            placeholder="Search"
+                            onChange={(event: any) => socialStores.search(event.target.value)}
+                        />
                     </FormGroup>
                 </Navbar.Form>
+
                 <Nav pullRight>
                     {socialStores.getSocials()
                         .map((item, i) => (

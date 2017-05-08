@@ -1,12 +1,12 @@
-.user {
+.feed {
     text-decoration: none;
 }
 
-.user > * {
+.feed > * {
     padding: 10px;
 }
 
-.user:hover > * {
+.feed:hover > * {
     background: #F3F2F2;
     border-radius: 20px;
 }

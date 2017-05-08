@@ -16,11 +16,11 @@ class AppLayout extends React.Component<null, null> {
 
                 <Grid fluid>
                     <Row >
-                        {/*<Col sm={4} >*/}
-                            {/*<Options/>*/}
-                        {/*</Col>*/}
+                        <Col sm={12} >
+                            <Options/>
+                        </Col>
 
-                        <Col sm ={12}>
+                        <Col sm={12}>
                             <AppContent/>
                         </Col>
                     </Row>

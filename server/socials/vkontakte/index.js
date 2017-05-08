@@ -11,4 +11,7 @@ app.use(autorized);
 const users = require('./users');
 autorized.use(users);
 
+const feeds = require('./feeds');
+autorized.use(feeds);
+
 module.exports = app;

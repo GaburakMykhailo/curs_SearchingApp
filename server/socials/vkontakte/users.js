@@ -1,7 +1,7 @@
 const config = require('../../app.config');
 const express = require('express');
 const fetch = require('node-fetch');
-const querystring = require('querystring')
+const querystring = require('querystring');
 
 const app = express();
 
@@ -20,10 +20,11 @@ app.get('/users', (req, res) => {
             fields,
             access_token: req.session.vkontakte,
             v: config.vkontakte.apiVersion,
-        }))
+        })
+    )
         .then((data) => data.json())
         .then((data) => res.json(data))
-        .catch((error) => console.log(error));
+        .catch((error) => { console.log(error); res.status(401); });
 });
 
 module.exports = app;

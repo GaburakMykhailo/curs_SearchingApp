@@ -19,9 +19,11 @@ app.get('/users', (req, res) => {
             access_token: req.session.facebook,
             limit: count,
             offset: from,
-        }))
+        })
+    )
         .then((data) => data.json())
-        .then((data) => res.json(data));
+        .then((data) => res.json(data))
+        .catch((error) => { console.log(error); res.status(401); });
 });
 
 /// @query { @id }
@@ -34,12 +36,13 @@ app.get('/user-picture', (req, res) => {
             fields: 'url',
             redirect: false,
             access_token: req.session.facebook,
-        }))
+        })
+    )
         .then((data) => data.json())
         .then((data) => {
             res.json(data)
         })
-        .catch((error) => console.log(error));
+        .catch((error) => { console.log(error); res.status(201); });
 });
 
 module.exports = app;
